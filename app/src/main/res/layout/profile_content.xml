@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:id="@+id/relative_layout2">
+
+            <!-- Upper part layout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:id="@+id/upper_part_layout">
+
+
+                 <!-- Profile image layout -->
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="25dp"
+                    tools:ignore="Suspicious0dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="25"
+                    android:layout_marginTop="10dp">
+
+                    <!-- if but image tag right a way then the image
+                    would be a square shape, but we want a circular shape-->
+
+
+                    <!--Use circle image view library-->
+                   <de.hdodenhof.circleimageview.CircleImageView
+                       android:layout_width="75dp"
+                       android:layout_height="75dp"
+                       android:id="@+id/profile_photo"
+                       android:layout_centerVertical="true">
+
+                   </de.hdodenhof.circleimageview.CircleImageView>
+
+                </RelativeLayout>
+                <!-- End Profile image layout -->
+
+
+                <!-- Posts & followers part layout -->
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp"
+                    tools:ignore="Suspicious0dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="75"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp">
+
+                    <include layout="@layout/upper_part_snippet"></include>
+
+                </RelativeLayout>
+
+                <!-- End Posts & followers part layout -->
+
+            </LinearLayout>
+            <!-- End of upper part -->
+
+
+
+            <!-- Middle part layout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/upper_part_layout"
+                android:orientation="vertical"
+                android:id="@+id/middle_part_layout"
+                android:padding="20dp"
+                android:background="@color/colorWhite">
+
+                <TextView
+                    android:id="@+id/display_name_tv"
+                    android:text="Name"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:text="Description"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+            <!-- EndMiddle part layout-->
+
+
+            <!-- Lower part layout -->
+
+            <RelativeLayout
+                android:id="@+id/lower_part_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/middle_part_layout"
+                android:layout_marginBottom="1dp"
+                >
+
+                <!--
+                   To show multiple images
+                   stretchMode allows stretching images when user touch and hole
+
+                 -->
+                <GridView
+                    android:id="@+id/images_grid_layout"
+                    android:gravity="center"
+                    android:numColumns="3"
+                    android:verticalSpacing="1dp"
+                    android:horizontalSpacing="1dp"
+                    android:stretchMode="columnWidth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></GridView>
+
+            </RelativeLayout>
+
+
+            <!-- End Lower part layout -->
+
+
+
+
+
+        </RelativeLayout>
+        <!-- End relative_layout2 -->
+
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+</merge>
